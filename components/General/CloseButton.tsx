@@ -4,9 +4,10 @@ import styled from 'styled-components';
 
 interface Props {
   setCurrentSection: (arg0: number) => void;
+  setShowButton: (arg0: boolean) => void;
 }
 
-const CloseButton = ({ setCurrentSection }: Props) => {
+const CloseButton = ({ setCurrentSection, setShowButton }: Props) => {
   return (
     <Wrapper>
       <Image
@@ -14,6 +15,7 @@ const CloseButton = ({ setCurrentSection }: Props) => {
         alt="close"
         onClick={() => {
           setCurrentSection(0);
+          setShowButton(false);
         }}
       />
     </Wrapper>

@@ -3,6 +3,10 @@ import Image from 'next/image';
 import styles from '../../styles/Login.module.scss';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { Button } from '../../components';
+import rps_logo from '../../public/images/rps-logo.png';
+import apple from '../../public/svgs/apple.svg';
+import google from '../../public/svgs/google.svg';
 
 const Register: NextPage = () => {
   const { pathname } = useRouter();
@@ -11,13 +15,8 @@ const Register: NextPage = () => {
       <div className={styles.inner}>
         <Link href="/">
           <Image
-            src="/images/rps-logo.png"
-            height={107}
-            width={165}
+            src={rps_logo}
             alt="rps-logo"
-            style={{
-              cursor: 'pointer',
-            }}
           />
         </Link>
         <form className={styles.form}>
@@ -41,9 +40,7 @@ const Register: NextPage = () => {
               id="confirm-password"
               placeholder="Confirm password"
             />
-            <button className={styles.register} type="submit">
-              Register
-            </button>
+            <Button type="submit" text="Register" />
           </div>
 
           <p>Forgot password?</p>
@@ -55,9 +52,7 @@ const Register: NextPage = () => {
 
           <button type="button" className={styles.apple}>
             <Image
-              src="/svgs/apple.svg"
-              height={24}
-              width={24}
+              src={apple}
               alt="apple-logo"
             />
             <p>Sign up with Apple</p>
@@ -65,9 +60,7 @@ const Register: NextPage = () => {
 
           <button type="button" className={styles.google}>
             <Image
-              src="/svgs/google.svg"
-              height={24}
-              width={24}
+              src={google}
               alt="google-logo"
             />
             <p>Sign up with Google</p>

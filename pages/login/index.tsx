@@ -3,10 +3,11 @@ import Image from 'next/image';
 import styles from '../../styles/Login.module.scss';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { Button } from '../../components';
 
 const Login: NextPage = () => {
   const { pathname } = useRouter();
-  
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.inner}>
@@ -37,9 +38,7 @@ const Login: NextPage = () => {
           <div className={(pathname === '/login' && styles.animate) || ''}>
             <input type="text" id="email" placeholder="Username or email" />
             <input type="password" id="password" placeholder="Password" />
-            <button className={styles.register} type="submit">
-              Sign in
-            </button>
+            <Button type="submit" text="Sign in" />
           </div>
 
           <p>Forgot password?</p>

@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import {
+  Button,
   ConnectedUser,
   Links,
   SearchingOpp,
@@ -13,16 +14,21 @@ import styles from '../styles/Select.module.scss';
 import { handData } from '../utils/handData';
 import chevron_left from '../public/svgs/ic-chevron-left.svg';
 import chevron_right from '../public/svgs/ic-chevron-right.svg';
+import styled from 'styled-components';
 
 const Select: NextPage = () => {
   const [changeImage, setChangeImage] = useState<number>(0),
     [changeRound, setChangeRound] = useState<number>(0),
-    [currentSection, setCurrentSection] = useState<number>(0);
+    [currentSection, setCurrentSection] = useState<number>(0),
+    [showButton, setShowButton] = useState<boolean>(false);
 
   useEffect(() => {
     currentSection === 3
       ? setTimeout(() => {
           setCurrentSection(4);
+          setTimeout(() => {
+            setShowButton(true);
+          }, 1000);
         }, 4000)
       : null;
   }, [currentSection]);
@@ -30,8 +36,13 @@ const Select: NextPage = () => {
     <>
       <Sidebar />
       <div className={styles.wrapper}>
-        {currentSection === 4 && (
+        {currentSection === 4 && showButton !== true && (
           <h1 className={styles.waiting__text}>Waiting for opponent...</h1>
+        )}
+        {showButton && (
+          <ButtonContainer>
+            <Button type="button" text="Start" />
+          </ButtonContainer>
         )}
         <div className={styles.inner}>
           <div className={styles.select__skin__color}>
@@ -74,13 +85,23 @@ const Select: NextPage = () => {
               <Links setCurrentSection={setCurrentSection} />
             )}
             {currentSection === 2 && (
-              <SharePlayerLink setCurrentSection={setCurrentSection} />
+              <SharePlayerLink
+                setCurrentSection={setCurrentSection}
+                setShowButton={setShowButton}
+              />
             )}
-            {currentSection === 3 && <SearchingOpp styles={styles} />}
+            {currentSection === 3 && (
+              <SearchingOpp
+                styles={styles}
+                setCurrentSection={setCurrentSection}
+                setShowButton={setShowButton}
+              />
+            )}
             {currentSection === 4 && (
               <ConnectedUser
                 styles={styles}
                 setCurrentSection={setCurrentSection}
+                setShowButton={setShowButton}
               />
             )}
           </div>
@@ -91,3 +112,8 @@ const Select: NextPage = () => {
 };
 
 export default Select;
+
+const ButtonContainer = styled.div`
+  width: 20%;
+  margin: 1em auto -50px;
+`;

@@ -8,3 +8,4 @@ export { default as SearchingOpp } from './UI/SearchingOpp';
 export { default as ConnectedUser } from './UI/ConnectedUser';
 export { default as CloseButton } from './General/CloseButton';
 export { default as CopyLinkButton } from './General/CopyLink';
+export { default as Button } from './General/Button';

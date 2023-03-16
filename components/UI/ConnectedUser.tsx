@@ -5,12 +5,16 @@ import CloseButton from '../General/CloseButton';
 interface Props {
   styles: any;
   setCurrentSection: (arg0: number) => void;
+  setShowButton: (arg0: boolean) => void;
 }
 
-const ConnectedUser = ({ styles, setCurrentSection }: Props) => {
+const ConnectedUser = ({ styles, setCurrentSection, setShowButton }: Props) => {
   return (
     <>
-      <CloseButton setCurrentSection={setCurrentSection} />
+      <CloseButton
+        setCurrentSection={setCurrentSection}
+        setShowButton={setShowButton}
+      />
       <div>
         <Image src={fairRock} alt="black-skin" />
         <h2
