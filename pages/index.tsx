@@ -1,20 +1,15 @@
-import type { NextPage } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import { Leaderboard } from "../components";
-import styles from "../styles/Home.module.scss";
+import type { NextPage } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Leaderboard } from '../components';
+import styles from '../styles/Home.module.scss';
+import rps_logo from '../public/images/rps-logo.png';
 
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <Image
-          src="/images/rps-logo.png"
-          height={226}
-          width={350}
-          alt="rps-logo"
-          objectFit="contain"
-        />
+        <Image src={rps_logo} alt="rps-logo" />
         <Leaderboard />
         <div className={styles.play__buttons}>
           <button type="button">Play as guest</button>

@@ -1,4 +1,4 @@
-import styles from '../styles/TestCamComponent.module.scss';
+import styles from '../../styles/TestCamComponent.module.scss';
 import SelectSkin from './SelectSkin';
 import TestCam from './TestCam';
 

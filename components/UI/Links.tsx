@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "../styles/Links.module.scss";
+import styles from "../../styles/Links.module.scss";
 
 type Props = {
   setCurrentSection: (currentSection: number) => void;

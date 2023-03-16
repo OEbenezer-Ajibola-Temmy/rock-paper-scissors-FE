@@ -1,35 +1,33 @@
-import Image from "next/image";
-import styles from "../styles/Leaderboard.module.scss";
+import Image from 'next/image';
+import styles from '../../styles/Leaderboard.module.scss';
 
-type Props = {};
-
-const Leaderboard = (props: Props): JSX.Element => {
-  const leadersData: any[] = [
+const Leaderboard = (): JSX.Element => {
+  const leadersData = [
     {
       rank: 1,
       star: 3,
-      username: "BBQueen",
+      username: 'BBQueen',
       points: 705,
     },
     {
       rank: 2,
       star: 3,
-      username: "Nagan00917",
+      username: 'Nagan00917',
       points: 622,
     },
     {
       rank: 3,
       star: 3,
-      username: "A917161746",
+      username: 'A917161746',
       points: 600,
     },
     {
       rank: 1056,
       star: 0,
-      username: "Jamanson",
+      username: 'Jamanson',
       points: 50,
     },
-  ];
+  ] as { rank: number; star: number; username: string; points: number }[];
   return (
     <div className={styles.wrapper}>
       <div className={styles.inner}>

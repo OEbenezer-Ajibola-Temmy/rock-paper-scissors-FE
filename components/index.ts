@@ -1,5 +1,10 @@
-export { default as Leaderboard } from './Leaderboard';
-export { default as SelectRound } from './SelectRound';
-export { default as Links } from './Links';
-export { default as Sidebar } from './Sidebar';
-export { default as TestCamComponent } from './TestCamComponent';
+export { default as Leaderboard } from './UI/Leaderboard';
+export { default as SelectRound } from './UI/SelectRound';
+export { default as Links } from './UI/Links';
+export { default as Sidebar } from './UI/Sidebar';
+export { default as TestCamComponent } from './UI/TestCamComponent';
+export { default as SharePlayerLink } from './UI/SharePlayerLink';
+export { default as SearchingOpp } from './UI/SearchingOpp';
+export { default as ConnectedUser } from './UI/ConnectedUser';
+export { default as CloseButton } from './General/CloseButton';
+export { default as CopyLinkButton } from './General/CopyLink';

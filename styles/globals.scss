@@ -1,14 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
-
-*  {
-  font-family: 'Montserrat', sans-serif;
-  box-sizing: border-box;
-}
+@import url('https://fonts.cdnfonts.com/css/digitalt');
 
 html,
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Digitalt', sans-serif;
   background: radial-gradient(28.63% 50% at 50% 50%, #2C2C2C 1.31%, #1C1C1C 100%) no-repeat;
 }
 

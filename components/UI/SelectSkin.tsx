@@ -1,36 +1,11 @@
-import styles from '../styles/SelectSkin.module.scss';
+import styles from '../../styles/SelectSkin.module.scss';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const SelectSkin = () => {
-  const [changeImage, setChangeImage] = useState<number>(0),
-    [currentSection, setCurrentSection] = useState<number>(0);
-
-  useEffect(() => {
-    if (currentSection === 3) {
-      setTimeout(() => {
-        setCurrentSection(4);
-      }, 1000);
-    }
-  }, [currentSection]);
+  const [changeImage, setChangeImage] = useState<number>(0);
   return (
     <div className={styles.wrapper}>
-      {currentSection === 4 && (
-        <h1
-          style={{
-            color: 'white',
-            textAlign: 'center',
-            margin: '30px auto -40px',
-            textTransform: 'uppercase',
-            fontWeight: '500',
-            fontSize: '31.7778px',
-            lineHeight: '33px',
-            letterSpacing: '0.04em',
-          }}
-        >
-          Waiting for opponent...
-        </h1>
-      )}
       <div className={styles.inner}>
         <div className={styles.select__skin__color}>
           <h1>Select skin color</h1>
