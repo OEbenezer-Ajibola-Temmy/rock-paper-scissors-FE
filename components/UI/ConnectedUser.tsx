@@ -6,15 +6,23 @@ interface Props {
   styles: any;
   setCurrentSection: (arg0: number) => void;
   setShowButton: (arg0: boolean) => void;
+  showButton: boolean;
 }
 
-const ConnectedUser = ({ styles, setCurrentSection, setShowButton }: Props) => {
+const ConnectedUser = ({
+  styles,
+  setCurrentSection,
+  setShowButton,
+  showButton,
+}: Props) => {
   return (
     <>
-      <CloseButton
-        setCurrentSection={setCurrentSection}
-        setShowButton={setShowButton}
-      />
+      {!showButton && (
+        <CloseButton
+          setCurrentSection={setCurrentSection}
+          setShowButton={setShowButton}
+        />
+      )}
       <div>
         <Image src={fairRock} alt="black-skin" />
         <h2

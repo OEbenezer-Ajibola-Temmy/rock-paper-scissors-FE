@@ -102,6 +102,7 @@ const Select: NextPage = () => {
                 styles={styles}
                 setCurrentSection={setCurrentSection}
                 setShowButton={setShowButton}
+                showButton={showButton}
               />
             )}
           </div>

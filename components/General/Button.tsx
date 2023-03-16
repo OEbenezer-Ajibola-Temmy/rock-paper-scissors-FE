@@ -3,10 +3,15 @@ import styled from 'styled-components';
 interface ButtonProps {
   text: string;
   type: 'button' | 'submit' | 'reset';
+  onClick?: () => void;
 }
 
-const Button = ({ text, type }: ButtonProps) => {
-  return <Register type={type}>{text}</Register>;
+const Button = ({ text, type, onClick }: ButtonProps) => {
+  return (
+    <Register type={type} onClick={onClick}>
+      {text}
+    </Register>
+  );
 };
 
 export default Button;
