@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import {
+  BigLeaderboard,
   Button,
   ConnectedUser,
   Links,
@@ -20,28 +21,43 @@ const Select: NextPage = () => {
   const [changeImage, setChangeImage] = useState<number>(0),
     [changeRound, setChangeRound] = useState<number>(0),
     [currentSection, setCurrentSection] = useState<number>(0),
-    [showButton, setShowButton] = useState<boolean>(false);
+    [showButton, setShowButton] = useState<boolean>(false),
+    [showWaiting, setShowWaiting] = useState<boolean>(false),
+    [leaderBoard, setLeaderBoard] = useState<boolean>(false);
 
   useEffect(() => {
     currentSection === 3
       ? setTimeout(() => {
           setCurrentSection(4);
-          setTimeout(() => {
-            setShowButton(true);
-          }, 1000);
+          setShowButton(true);
         }, 4000)
       : null;
   }, [currentSection]);
+
+  const openLeaderBoard = () => {
+    setLeaderBoard(!leaderBoard);
+  };
   return (
     <>
-      <Sidebar />
+      <BigLeaderboard
+        leaderBoard={leaderBoard}
+        setLeaderBoard={setLeaderBoard}
+      />
+      <Sidebar openLeaderBoard={openLeaderBoard} />
       <div className={styles.wrapper}>
-        {currentSection === 4 && showButton !== true && (
+        {showWaiting && (
           <h1 className={styles.waiting__text}>Waiting for opponent...</h1>
         )}
         {showButton && (
           <ButtonContainer>
-            <Button type="button" text="Start" />
+            <Button
+              onClick={() => {
+                setShowWaiting(true);
+                setShowButton(false);
+              }}
+              type="button"
+              text="Start"
+            />
           </ButtonContainer>
         )}
         <div className={styles.inner}>
@@ -103,6 +119,7 @@ const Select: NextPage = () => {
                 setCurrentSection={setCurrentSection}
                 setShowButton={setShowButton}
                 showButton={showButton}
+                setShowWaiting={setShowWaiting}
               />
             )}
           </div>

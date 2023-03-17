@@ -11,7 +11,7 @@ const TestCamComponent = () => {
       <div className={styles.inner}>
         <SelectSkin />
         {!startCam && <TestCam setStartCam={setStartCam} />}
-        {startCam && <WebCam />}
+        {startCam && <WebCam continousCapture={false} />}
       </div>
     </div>
   );

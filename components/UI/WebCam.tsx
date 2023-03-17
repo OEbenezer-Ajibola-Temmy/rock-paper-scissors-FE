@@ -3,7 +3,11 @@ import { useState, useRef } from 'react';
 import styled from 'styled-components';
 import Button from '../General/Button';
 
-const WebCam = () => {
+interface Props {
+  continousCapture: boolean;
+}
+
+const WebCam = ({ continousCapture }: Props) => {
   const videoRef = useRef(
     null
   ) as unknown as React.MutableRefObject<HTMLVideoElement>;
@@ -32,7 +36,7 @@ const WebCam = () => {
         const interval = setInterval(() => {
           captureImage();
         }, 20);
-        setTimeout(() => {
+        !continousCapture && setTimeout(() => {
           clearInterval(interval);
           stopCamera();
         }, 1000);

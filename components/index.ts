@@ -10,3 +10,4 @@ export { default as CloseButton } from './General/CloseButton';
 export { default as CopyLinkButton } from './General/CopyLink';
 export { default as Button } from './General/Button';
 export { default as WebCam } from './UI/WebCam';
+export { default as BigLeaderboard } from './UI/BigLeaderboard';

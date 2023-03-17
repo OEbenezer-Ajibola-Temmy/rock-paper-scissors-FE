@@ -7,6 +7,7 @@ interface Props {
   setCurrentSection: (arg0: number) => void;
   setShowButton: (arg0: boolean) => void;
   showButton: boolean;
+  setShowWaiting: (arg0: boolean) => void;
 }
 
 const ConnectedUser = ({
@@ -14,6 +15,7 @@ const ConnectedUser = ({
   setCurrentSection,
   setShowButton,
   showButton,
+  setShowWaiting,
 }: Props) => {
   return (
     <>
@@ -21,6 +23,7 @@ const ConnectedUser = ({
         <CloseButton
           setCurrentSection={setCurrentSection}
           setShowButton={setShowButton}
+          setShowWaiting={setShowWaiting}
         />
       )}
       <div>
