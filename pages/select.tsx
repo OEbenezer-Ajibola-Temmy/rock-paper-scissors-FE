@@ -22,8 +22,7 @@ const Select: NextPage = () => {
     [changeRound, setChangeRound] = useState<number>(0),
     [currentSection, setCurrentSection] = useState<number>(0),
     [showButton, setShowButton] = useState<boolean>(false),
-    [showWaiting, setShowWaiting] = useState<boolean>(false),
-    [leaderBoard, setLeaderBoard] = useState<boolean>(false);
+    [showWaiting, setShowWaiting] = useState<boolean>(false);
 
   useEffect(() => {
     currentSection === 3
@@ -33,17 +32,10 @@ const Select: NextPage = () => {
         }, 4000)
       : null;
   }, [currentSection]);
-
-  const openLeaderBoard = () => {
-    setLeaderBoard(!leaderBoard);
-  };
   return (
     <>
-      <BigLeaderboard
-        leaderBoard={leaderBoard}
-        setLeaderBoard={setLeaderBoard}
-      />
-      <Sidebar openLeaderBoard={openLeaderBoard} />
+      <BigLeaderboard />
+      <Sidebar />
       <div className={styles.wrapper}>
         {showWaiting && (
           <h1 className={styles.waiting__text}>Waiting for opponent...</h1>

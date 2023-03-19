@@ -1,11 +1,9 @@
 import styled from 'styled-components';
+import { useRecoilValue } from 'recoil';
+import { leaderboardAtom } from '../../recoil/leaderboardAtom';
 
-interface Props {
-  leaderBoard: boolean;
-  setLeaderBoard: (value: boolean) => void;
-}
-
-const BigLeaderboard = ({ leaderBoard, setLeaderBoard }: Props) => {
+const BigLeaderboard = () => {
+  const leaderBoard = useRecoilValue(leaderboardAtom)
   return (
     <Wrapper className={`${leaderBoard && 'slide_up'}`}>
       <Inner>BigLeaderBoard</Inner>

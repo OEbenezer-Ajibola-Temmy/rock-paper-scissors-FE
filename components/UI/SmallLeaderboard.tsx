@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from '../../styles/Leaderboard.module.scss';
 
-const Leaderboard = (): JSX.Element => {
+const SmallLeaderboard = (): JSX.Element => {
   const leadersData = [
     {
       rank: 1,
@@ -97,4 +97,4 @@ const Leaderboard = (): JSX.Element => {
   );
 };
 
-export default Leaderboard;
+export default SmallLeaderboard;

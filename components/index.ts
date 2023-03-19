@@ -1,4 +1,4 @@
-export { default as Leaderboard } from './UI/Leaderboard';
+export { default as SmallLeaderboard } from './UI/SmallLeaderboard';
 export { default as SelectRound } from './UI/SelectRound';
 export { default as Links } from './UI/Links';
 export { default as Sidebar } from './UI/Sidebar';
