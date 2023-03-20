@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import { useRecoilValue } from 'recoil';
 import fairRock from '../../public/images/fair-rock-right.png';
-import { buttonAtom } from '../../recoil/buttonAtom';
-import { startAtom } from '../../recoil/startAtom';
+import { buttonAtom, startAtom } from '../../recoil';
 import CloseButton from '../General/CloseButton';
 
 interface Props {

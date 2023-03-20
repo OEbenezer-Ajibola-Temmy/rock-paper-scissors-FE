@@ -1,6 +1,8 @@
 import { atom } from "recoil";
 
-export const buttonAtom = atom({
+const buttonAtom = atom({
     key: "buttonAtom",
     default: false as boolean,
 });
+
+export default buttonAtom;

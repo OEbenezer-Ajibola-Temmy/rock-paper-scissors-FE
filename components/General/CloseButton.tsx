@@ -2,9 +2,7 @@ import Image from 'next/image';
 import close_icon from '../../public/svgs/ic-close.svg';
 import styled from 'styled-components';
 import { useRecoilState } from 'recoil';
-import { sectionAtom } from '../../recoil/sectionAtom';
-import { buttonAtom } from '../../recoil/buttonAtom';
-import { waitingAtom } from '../../recoil/waitingAtom';
+import { buttonAtom, sectionAtom, waitingAtom } from '../../recoil';
 
 const CloseButton = () => {
   const [, setCurrentSection] = useRecoilState<number>(sectionAtom),

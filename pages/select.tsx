@@ -17,10 +17,7 @@ import chevron_left from '../public/svgs/ic-chevron-left.svg';
 import chevron_right from '../public/svgs/ic-chevron-right.svg';
 import styled from 'styled-components';
 import { useRecoilState } from 'recoil';
-import { startAtom } from '../recoil/startAtom';
-import { sectionAtom } from '../recoil/sectionAtom';
-import { waitingAtom } from '../recoil/waitingAtom';
-import { buttonAtom } from '../recoil/buttonAtom';
+import { buttonAtom, sectionAtom, startAtom, waitingAtom } from '../recoil';
 
 const Select: NextPage = () => {
   const [_, setStart] = useRecoilState<boolean>(startAtom),

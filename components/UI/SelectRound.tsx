@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useRecoilState } from "recoil";
-import { sectionAtom } from "../../recoil/sectionAtom";
+import { sectionAtom } from "../../recoil";
 
 type Props = {
   styles: any;

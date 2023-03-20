@@ -1,6 +1,8 @@
 import { atom } from 'recoil';
 
-export const sectionAtom = atom({
+const sectionAtom = atom({
   key: 'sectionAtom',
   default: 0 as number,
 });
+
+export default sectionAtom;
