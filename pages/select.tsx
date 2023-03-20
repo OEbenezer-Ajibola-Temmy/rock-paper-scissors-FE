@@ -16,13 +16,19 @@ import { handData } from '../utils/handData';
 import chevron_left from '../public/svgs/ic-chevron-left.svg';
 import chevron_right from '../public/svgs/ic-chevron-right.svg';
 import styled from 'styled-components';
+import { useRecoilState } from 'recoil';
+import { startAtom } from '../recoil/startAtom';
+import { sectionAtom } from '../recoil/sectionAtom';
+import { waitingAtom } from '../recoil/waitingAtom';
+import { buttonAtom } from '../recoil/buttonAtom';
 
 const Select: NextPage = () => {
-  const [changeImage, setChangeImage] = useState<number>(0),
-    [changeRound, setChangeRound] = useState<number>(0),
-    [currentSection, setCurrentSection] = useState<number>(0),
-    [showButton, setShowButton] = useState<boolean>(false),
-    [showWaiting, setShowWaiting] = useState<boolean>(false);
+  const [_, setStart] = useRecoilState<boolean>(startAtom),
+    [currentSection, setCurrentSection] = useRecoilState<number>(sectionAtom),
+    [showWaiting, setShowWaiting] = useRecoilState<boolean>(waitingAtom),
+    [showButton, setShowButton] = useRecoilState(buttonAtom),
+    [changeImage, setChangeImage] = useState<number>(0),
+    [changeRound, setChangeRound] = useState<number>(0);
 
   useEffect(() => {
     currentSection === 3
@@ -46,6 +52,7 @@ const Select: NextPage = () => {
               onClick={() => {
                 setShowWaiting(true);
                 setShowButton(false);
+                setStart(true);
               }}
               type="button"
               text="Start"
@@ -86,34 +93,12 @@ const Select: NextPage = () => {
                 styles={styles}
                 changeRound={changeRound}
                 setChangeRound={setChangeRound}
-                setCurrentSection={setCurrentSection}
               />
             )}
-            {currentSection === 1 && (
-              <Links setCurrentSection={setCurrentSection} />
-            )}
-            {currentSection === 2 && (
-              <SharePlayerLink
-                setCurrentSection={setCurrentSection}
-                setShowButton={setShowButton}
-              />
-            )}
-            {currentSection === 3 && (
-              <SearchingOpp
-                styles={styles}
-                setCurrentSection={setCurrentSection}
-                setShowButton={setShowButton}
-              />
-            )}
-            {currentSection === 4 && (
-              <ConnectedUser
-                styles={styles}
-                setCurrentSection={setCurrentSection}
-                setShowButton={setShowButton}
-                showButton={showButton}
-                setShowWaiting={setShowWaiting}
-              />
-            )}
+            {currentSection === 1 && <Links />}
+            {currentSection === 2 && <SharePlayerLink />}
+            {currentSection === 3 && <SearchingOpp styles={styles} />}
+            {currentSection === 4 && <ConnectedUser styles={styles} />}
           </div>
         </div>
       </div>

@@ -4,17 +4,12 @@ import CloseButton from '../General/CloseButton';
 
 interface Props {
   styles: any;
-  setCurrentSection: (arg0: number) => void;
-  setShowButton: (arg0: boolean) => void;
 }
 
-const SearchingOpp = ({ styles, setCurrentSection, setShowButton }: Props) => {
+const SearchingOpp = ({ styles }: Props) => {
   return (
     <>
-      <CloseButton
-        setCurrentSection={setCurrentSection}
-        setShowButton={setShowButton}
-      />
+      <CloseButton />
       <Image src={loaderImg} alt="loader" className={styles.loader} />
       <h2
         style={{

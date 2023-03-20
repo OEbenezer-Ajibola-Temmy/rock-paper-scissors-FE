@@ -1,18 +1,19 @@
 import Image from "next/image";
+import { useRecoilState } from "recoil";
+import { sectionAtom } from "../../recoil/sectionAtom";
 
 type Props = {
   styles: any;
   changeRound: number;
   setChangeRound: (arg0: number) => void;
-  setCurrentSection: (arg0: number) => void;
 };
 
 const SelectRound = ({
   styles,
   changeRound,
   setChangeRound,
-  setCurrentSection,
 }: Props): JSX.Element => {
+  const [_, setCurrentSection] = useRecoilState<number>(sectionAtom)
   return (
     <>
       <h1>Select number of rounds</h1>

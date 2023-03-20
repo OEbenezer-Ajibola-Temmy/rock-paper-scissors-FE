@@ -1,14 +1,15 @@
 import Image from 'next/image';
 import close_icon from '../../public/svgs/ic-close.svg';
 import styled from 'styled-components';
+import { useRecoilState } from 'recoil';
+import { sectionAtom } from '../../recoil/sectionAtom';
+import { buttonAtom } from '../../recoil/buttonAtom';
+import { waitingAtom } from '../../recoil/waitingAtom';
 
-interface Props {
-  setCurrentSection: (arg0: number) => void;
-  setShowButton: (arg0: boolean) => void;
-  setShowWaiting: (arg0: boolean) => void;
-}
-
-const CloseButton = ({ setCurrentSection, setShowButton, setShowWaiting }: Props) => {
+const CloseButton = () => {
+  const [, setCurrentSection] = useRecoilState<number>(sectionAtom),
+    [, setShowButton] = useRecoilState<boolean>(buttonAtom),
+    [, setShowWaiting] = useRecoilState<boolean>(waitingAtom);
   return (
     <Wrapper>
       <Image

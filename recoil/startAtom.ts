@@ -1,6 +1,6 @@
 import { atom } from 'recoil';
 
-export const leaderboardAtom = atom({
-  key: 'sidebarAtom',
+export const startAtom = atom({
+  key: 'startAtom',
   default: false as boolean,
 });

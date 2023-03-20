@@ -1,11 +1,10 @@
-import Image from "next/image";
-import styles from "../../styles/Links.module.scss";
+import Image from 'next/image';
+import { useRecoilState } from 'recoil';
+import { sectionAtom } from '../../recoil/sectionAtom';
+import styles from '../../styles/Links.module.scss';
 
-type Props = {
-  setCurrentSection: (currentSection: number) => void;
-};
-
-const Links = ({ setCurrentSection }: Props) => {
+const Links = () => {
+  const [, setCurrentSection] = useRecoilState<number>(sectionAtom);
   return (
     <div className={styles.wrapper}>
       <button

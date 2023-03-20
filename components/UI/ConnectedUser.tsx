@@ -1,33 +1,22 @@
 import Image from 'next/image';
+import { useRecoilValue } from 'recoil';
 import fairRock from '../../public/images/fair-rock-right.png';
+import { buttonAtom } from '../../recoil/buttonAtom';
+import { startAtom } from '../../recoil/startAtom';
 import CloseButton from '../General/CloseButton';
 
 interface Props {
   styles: any;
-  setCurrentSection: (arg0: number) => void;
-  setShowButton: (arg0: boolean) => void;
-  showButton: boolean;
-  setShowWaiting: (arg0: boolean) => void;
 }
 
-const ConnectedUser = ({
-  styles,
-  setCurrentSection,
-  setShowButton,
-  showButton,
-  setShowWaiting,
-}: Props) => {
+const ConnectedUser = ({ styles }: Props) => {
+  const start = useRecoilValue(startAtom);
+  const showButton = useRecoilValue(buttonAtom);
   return (
     <>
-      {!showButton && (
-        <CloseButton
-          setCurrentSection={setCurrentSection}
-          setShowButton={setShowButton}
-          setShowWaiting={setShowWaiting}
-        />
-      )}
+      {showButton && <CloseButton />}
       <div>
-        <Image src={fairRock} alt="black-skin" />
+        <Image src={fairRock} alt="fair-skin" />
         <h2
           style={{
             position: 'absolute',
