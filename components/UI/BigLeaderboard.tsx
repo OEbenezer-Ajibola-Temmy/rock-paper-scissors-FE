@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
-import { leaderboardAtom } from '../../recoil/leaderboardAtom';
+import { leaderboardAtom } from '../../recoil';
 
 const BigLeaderboard = () => {
   const leaderBoard = useRecoilValue(leaderboardAtom)

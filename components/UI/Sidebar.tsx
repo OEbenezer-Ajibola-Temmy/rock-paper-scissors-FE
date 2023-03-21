@@ -4,7 +4,7 @@ import styles from '../../styles/Sidebar.module.scss';
 import sidebar_logo from '../../public/images/sidebar-logo.png';
 import leaderboard_svg from '../../public/images/leaderboard.png';
 import book_svg from '../../public/images/book-open.png';
-import { leaderboardAtom } from '../../recoil/leaderboardAtom';
+import { leaderboardAtom } from '../../recoil';
 
 const Sidebar = () => {
   const [openLeaderboard, setOpenLeaderboard] = useRecoilState(leaderboardAtom)
