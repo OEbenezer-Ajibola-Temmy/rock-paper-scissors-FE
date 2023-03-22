@@ -7,7 +7,7 @@ import book_svg from '../../public/images/book-open.png';
 import { leaderboardAtom } from '../../recoil';
 
 const Sidebar = () => {
-  const [openLeaderboard, setOpenLeaderboard] = useRecoilState(leaderboardAtom)
+  const [openLeaderboard, setOpenLeaderboard] = useRecoilState(leaderboardAtom);
   return (
     <aside className={styles.sidebar}>
       <div className={styles.sidebar__inner}>
@@ -16,9 +16,10 @@ const Sidebar = () => {
         </div>
 
         <div className={styles.sidebar__content}>
-          <div className={styles.sidebar__content__inner}
+          <div
+            className={styles.sidebar__content__inner}
             onClick={() => {
-              setOpenLeaderboard(!openLeaderboard)
+              setOpenLeaderboard(!openLeaderboard);
             }}
           >
             <Image src={leaderboard_svg} alt="leaderboard" />

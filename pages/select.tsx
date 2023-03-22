@@ -34,6 +34,7 @@ const Select: NextPage = () => {
           setShowButton(true);
         }, 4000)
       : null;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentSection]);
   return (
     <>
