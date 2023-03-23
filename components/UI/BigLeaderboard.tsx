@@ -3,7 +3,7 @@ import { useRecoilValue } from 'recoil';
 import { leaderboardAtom } from '../../recoil';
 
 const BigLeaderboard = () => {
-  const leaderBoard = useRecoilValue(leaderboardAtom)
+  const leaderBoard = useRecoilValue(leaderboardAtom);
   return (
     <Wrapper className={`${leaderBoard && 'slide_up'}`}>
       <Inner>BigLeaderBoard</Inner>
@@ -19,7 +19,12 @@ const Wrapper = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: radial-gradient(
+      28.63% 50% at 50% 50%,
+      #2c2c2c 1.31%,
+      #1c1c1c 100%
+    )
+    no-repeat;
   z-index: 100;
   display: flex;
   justify-content: center;
@@ -34,7 +39,5 @@ const Wrapper = styled.div`
 
 const Inner = styled.div`
   width: 40%;
-  height: 100%;
-  background-color: #fff;
-  border-radius: 10px;
+  height: 60%;
 `;
