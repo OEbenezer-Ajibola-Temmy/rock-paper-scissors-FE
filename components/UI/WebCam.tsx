@@ -105,9 +105,10 @@ const WebCam = ({ continousCapture }: Props) => {
 export default WebCam;
 
 const Wrapper = styled.div`
-  width: 542px;
+  width: 100%;
   height: 485px;
-  background: url('/images/test_cam_image.png') no-repeat center center #1c1c1c;
+  background: url('/images/test_cam_image.png') no-repeat  #1c1c1c;
+  background-size: cover;
   border: 6px solid #67eb00;
   box-shadow: 0.878652px 6.5811px 16px 2px rgba(0, 0, 0, 0.8);
   border-radius: 30px;

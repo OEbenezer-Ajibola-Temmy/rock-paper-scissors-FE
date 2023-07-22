@@ -1,4 +1,8 @@
 import styles from '../../styles/SelectSkin.module.scss';
+import ic_cheveron_left from '../../public/svgs/ic-chevron-left.svg';
+import ic_cheveron_right from '../../public/svgs/ic-chevron-right.svg';
+import black_rock_left from '../../public/images/black-rock-left.png';
+import fair_rock_left from '../../public/images/fair-rock-left.png';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -11,9 +15,7 @@ const SelectSkin = () => {
           <h1>Select skin color</h1>
           <div className={styles.image__selector}>
             <Image
-              src="/svgs/ic-chevron-left.svg"
-              width={24}
-              height={24}
+              src={ic_cheveron_left}
               alt="left"
               onClick={() => {
                 if (changeImage === 0) {
@@ -28,28 +30,14 @@ const SelectSkin = () => {
             />
             <div className={styles.images}>
               {changeImage === 0 && (
-                <Image
-                  src="/images/black-rock-left.png"
-                  width={218}
-                  height={124}
-                  alt="black-skin"
-                  objectFit="contain"
-                />
+                <Image src={black_rock_left} alt="black-skin" />
               )}
               {changeImage === 1 && (
-                <Image
-                  src="/images/fair-rock-left.png"
-                  width={218}
-                  height={124}
-                  alt="fair-skin"
-                  objectFit="contain"
-                />
+                <Image src={fair_rock_left} alt="fair-skin" />
               )}
             </div>
             <Image
-              src="/svgs/ic-chevron-right.svg"
-              width={24}
-              height={24}
+              src={ic_cheveron_right}
               alt="right"
               onClick={() => {
                 if (changeImage === 1) {
@@ -68,6 +56,6 @@ const SelectSkin = () => {
       </div>
     </div>
   );
-}
+};
 
-export default SelectSkin
+export default SelectSkin;

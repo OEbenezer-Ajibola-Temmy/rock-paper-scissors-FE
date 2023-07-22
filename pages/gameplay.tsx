@@ -2,6 +2,7 @@ import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 import { Sidebar } from '../components';
 import { leaderboardAtom } from '../recoil';
+import User from '../components/UI/Gameplay/User';
 
 const Gameplay = () => {
   const [openLeaderboard, setOpenLeaderboard] = useRecoilState(leaderboardAtom);
@@ -25,7 +26,10 @@ const Gameplay = () => {
               </Score>
             </Stat>
           </Header>
-          <Main></Main>
+          <Main>
+            <User hand_num={0} />
+            <User hand_num={1} />
+          </Main>
         </Inner>
       </Wrapper>
     </>
@@ -35,10 +39,10 @@ const Gameplay = () => {
 export default Gameplay;
 
 const Wrapper = styled.div`
-  min-height: 100vh;
   display: grid;
   place-items: center;
-  margin-left: 70px;
+  padding: 2em 0;
+  min-height: 100vh;
 `;
 
 const Inner = styled.div`
@@ -47,14 +51,15 @@ const Inner = styled.div`
 `;
 
 const Header = styled.div`
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
 const Round = styled.div`
-  width: 237.68px;
+  width: 237px;
   height: 63px;
   border-radius: 34px;
   border: 5px solid #ffdb0a;
@@ -78,6 +83,8 @@ const Stat = styled.div`
   width: 100%;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 0.2em;
+  margin-left: 50px;
 `;
 
 const Score = styled.div`
@@ -99,7 +106,11 @@ const Score = styled.div`
   }
 `;
 
-const Main = styled.div``;
+const Main = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+`;
 
 const ButtonContainer = styled.div``;
 

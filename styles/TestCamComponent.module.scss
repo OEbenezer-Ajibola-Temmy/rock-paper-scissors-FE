@@ -1,7 +1,13 @@
-.inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 80%;
-    margin: 0 auto;
-    gap: 2em;
+.wrapper {
+    margin-left: 70px;
+    width: 100%;
+
+    .inner {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 3em;
+    }
 }
