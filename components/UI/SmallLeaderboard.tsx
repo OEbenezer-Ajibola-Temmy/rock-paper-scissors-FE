@@ -1,5 +1,8 @@
 import Image from 'next/image';
 import styles from '../../styles/Leaderboard.module.scss';
+import ic_star_small from '../../public/svgs/ic-star_small.svg';
+import ic_star_medium from '../../public/svgs/ic-star_medium.svg';
+import ic_star_big from '../../public/svgs/ic-star_big.svg';
 
 const SmallLeaderboard = (): JSX.Element => {
   const leadersData = [
@@ -43,47 +46,17 @@ const SmallLeaderboard = (): JSX.Element => {
               <h3>{leader.rank}</h3>
               <div className={styles.stars__ctn}>
                 {leader.star === 1 ? (
-                  <Image
-                    src="/svgs/ic-star_small.svg"
-                    height={13}
-                    width={13}
-                    alt="star"
-                  />
+                  <Image src={ic_star_small} alt="star" />
                 ) : leader.star === 2 ? (
                   <>
-                    <Image
-                      src="/svgs/ic-star_small.svg"
-                      height={13}
-                      width={13}
-                      alt="star"
-                    />
-                    <Image
-                      src="/svgs/ic-star_medium.svg"
-                      height={17}
-                      width={17}
-                      alt="star"
-                    />
+                    <Image src={ic_star_small} alt="star" />
+                    <Image src={ic_star_medium} alt="star" />
                   </>
                 ) : leader.star === 3 ? (
                   <>
-                    <Image
-                      src="/svgs/ic-star_small.svg"
-                      height={13}
-                      width={13}
-                      alt="star"
-                    />
-                    <Image
-                      src="/svgs/ic-star_medium.svg"
-                      height={17}
-                      width={17}
-                      alt="star"
-                    />
-                    <Image
-                      src="/svgs/ic-star_big.svg"
-                      alt="star"
-                      height={20}
-                      width={20}
-                    />
+                    <Image src={ic_star_small} alt="star" />
+                    <Image src={ic_star_medium} alt="star" />
+                    <Image src={ic_star_big} alt="star" />
                   </>
                 ) : null}
               </div>

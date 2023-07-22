@@ -4,12 +4,17 @@ import styled from 'styled-components';
 import { useRecoilState } from 'recoil';
 import { buttonAtom, sectionAtom, waitingAtom } from '../../recoil';
 
-const CloseButton = () => {
+type Props = {
+  top?: number;
+  right?: number;
+};
+
+const CloseButton = ({ top = 0, right = 0 }: Props) => {
   const [, setCurrentSection] = useRecoilState<number>(sectionAtom),
     [, setShowButton] = useRecoilState<boolean>(buttonAtom),
     [, setShowWaiting] = useRecoilState<boolean>(waitingAtom);
   return (
-    <Wrapper>
+    <Wrapper style={{ top: `${top}px`, right: `${right}px` }}>
       <Image
         src={close_icon}
         alt="close"
@@ -27,8 +32,6 @@ export default CloseButton;
 
 const Wrapper = styled.div`
   position: absolute;
-  right: 0;
-  top: 0;
   padding: 1rem;
   cursor: pointer;
   z-index: 100;
