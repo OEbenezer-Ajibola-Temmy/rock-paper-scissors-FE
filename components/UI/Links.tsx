@@ -2,6 +2,9 @@ import Image from 'next/image';
 import { useRecoilState } from 'recoil';
 import { sectionAtom } from '../../recoil';
 import styles from '../../styles/Links.module.scss';
+import ic_link from '../../public/svgs/link.svg';
+import ic_globe from '../../public/svgs/globe.svg';
+import ic_robot from '../../public/svgs/robot.svg';
 
 const Links = () => {
   const [, setCurrentSection] = useRecoilState<number>(sectionAtom);
@@ -14,7 +17,7 @@ const Links = () => {
         className={styles.btn}
         type="button"
       >
-        <Image src="/svgs/link.svg" width={24} height={24} alt="link" />
+        <Image src={ic_link} alt="link" />
         Share Play Link
       </button>
       <button
@@ -24,11 +27,11 @@ const Links = () => {
         className={styles.btn}
         type="button"
       >
-        <Image src="/svgs/globe.svg" width={24} height={24} alt="link" />
+        <Image src={ic_globe} alt="globe" />
         Search Online
       </button>
       <button className={styles.btn} type="button">
-        <Image src="/svgs/robot.svg" width={24} height={24} alt="link" />
+        <Image src={ic_robot} alt="computer" />
         Play Computer
       </button>
     </div>
