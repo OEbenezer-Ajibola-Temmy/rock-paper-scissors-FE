@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
 .wrapper {
     position: absolute;
     right: 10px;
@@ -10,7 +11,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 372.41px;
+        width: 400px;
         height: 304.75px;
         background: #1C1C1C;
         box-shadow: 0.747065px 5.59552px 9.71185px rgba(0, 0, 0, 0.58);
@@ -18,7 +19,7 @@
 
         h1 {
             font-weight: 500;
-            font-size: 35.7022px;
+            font-size: 35.7px;
             text-align: center;
             letter-spacing: 0.04em;
             color: #67EB00;
@@ -62,13 +63,10 @@
                 }
 
                 h3 {
-                    font-family: 'Open Sans', sans-serif;
-                    font-style: normal;
-                    font-weight: 600;
-                    font-size: 11.953px;
-                    line-height: 16px;
-                    letter-spacing: 0.01em;
-                    color: #FFFFFF;
+                    color: #F8FFFF;
+                    font-size: 1.12063rem;
+                    font-weight: 500;
+                    letter-spacing: 0.04481rem;
 
                     &:nth-child(4) {
                         color: #FFDB0A;

@@ -36,7 +36,7 @@ const Login: NextPage = () => {
             </Link>
           </header>
           <div className={(pathname === '/login' && styles.animate) || ''}>
-            <input type="text" id="email" placeholder="Username or email" />
+            <input type="text" id="email" placeholder="Username" />
             <input type="password" id="password" placeholder="Password" />
             <Button type="submit" text="Sign in" />
           </div>

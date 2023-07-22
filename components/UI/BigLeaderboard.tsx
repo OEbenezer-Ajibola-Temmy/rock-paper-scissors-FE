@@ -13,7 +13,7 @@ const BigLeaderboard = () => {
   return (
     <Wrapper className={`${leaderBoard && 'slide_up'}`}>
       <Inner>
-        <CloseButton />
+        <CloseButton top={-34} right={-50} />
         <CardContainer>
           <CardInner>
             <h1>Leaderboard</h1>
@@ -61,14 +61,14 @@ const Wrapper = styled.div`
   top: 100%;
   left: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   background: radial-gradient(
       28.63% 50% at 50% 50%,
       #2c2c2c 1.31%,
       #1c1c1c 100%
     )
     no-repeat;
-  z-index: 100;
+  z-index: 200;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,8 +95,9 @@ const CardInner = styled.div`
   align-items: center;
   justify-content: center;
   background: #1c1c1c;
-  box-shadow: 0.75px 9.75px rgba(0, 0, 0, 0.58);
-  border-radius: 22px;
+  border-radius: 1.58506rem;
+  background: #1c1c1c;
+  box-shadow: 0.9px 6.6px 16px 2px rgba(0, 0, 0, 0.8);
 
   h1 {
     font-weight: 500;
@@ -116,9 +117,8 @@ const LeaderTable = styled.div`
 
   h3 {
     font-family: 'Open Sans', sans-serif;
-    font-style: normal;
     font-weight: 600;
-    font-size: 11.953px;
+    font-size: 12px;
     line-height: 16px;
     letter-spacing: 0.01em;
     color: #ffdb0a;
@@ -141,18 +141,13 @@ const LeaderDetails = styled.div`
   position: relative;
 
   h3 {
-    font-family: 'Open Sans', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 11.953px;
-    line-height: 16px;
-    letter-spacing: 0.01em;
-    color: #ffffff;
-    display: flex;
+    color: #f8ffff;
+    font-size: 1.318rem;
+    font-weight: 500;
+    letter-spacing: 0.05275rem;
 
     &:nth-child(3) {
       text-align: left;
-      align-self: flex-start;
     }
     &:nth-child(4) {
       color: #ffdb0a;

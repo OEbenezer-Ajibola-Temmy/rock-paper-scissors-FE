@@ -2,7 +2,7 @@ import Image from 'next/image';
 import close_icon from '../../public/svgs/ic-close.svg';
 import styled from 'styled-components';
 import { useRecoilState } from 'recoil';
-import { buttonAtom, sectionAtom, waitingAtom } from '../../recoil';
+import { buttonAtom, leaderboardAtom, sectionAtom, waitingAtom } from '../../recoil';
 
 type Props = {
   top?: number;
@@ -12,7 +12,9 @@ type Props = {
 const CloseButton = ({ top = 0, right = 0 }: Props) => {
   const [, setCurrentSection] = useRecoilState<number>(sectionAtom),
     [, setShowButton] = useRecoilState<boolean>(buttonAtom),
-    [, setShowWaiting] = useRecoilState<boolean>(waitingAtom);
+    [, setShowWaiting] = useRecoilState<boolean>(waitingAtom),
+      [openLeaderboard, setOpenLeaderboard] =
+        useRecoilState(leaderboardAtom);
   return (
     <Wrapper style={{ top: `${top}px`, right: `${right}px` }}>
       <Image
@@ -22,6 +24,8 @@ const CloseButton = ({ top = 0, right = 0 }: Props) => {
           setCurrentSection(0);
           setShowButton(false);
           setShowWaiting(false);
+
+          if (openLeaderboard) setOpenLeaderboard(false)
         }}
       />
     </Wrapper>

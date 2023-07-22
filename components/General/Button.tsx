@@ -18,27 +18,23 @@ const Button = ({ text, type, onClick, className }: ButtonProps) => {
 export default Button;
 
 const Register = styled.button`
-  font-family: 'Digitalt', sans-serif;
-  font-weight: 500;
-  font-size: 23px;
+  color: #fff;
   text-align: center;
-  letter-spacing: 0.04em;
-  color: #ffffff;
+  font-size: 2.06963rem;
+  font-weight: 500;
+  letter-spacing: 0.08281rem;
   border: 1px solid #000000;
-  text-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.15);
+  text-shadow: -2px 2px 0px rgba(0, 0, 0, 0.15);
   text-transform: uppercase;
   background: #67eb00;
   border-radius: 26px;
-  display: flex;
+  width: 100%;
   height: 61px;
-  align-items: center;
-  justify-content: center;
-  margin: 0.5em auto;
+  margin: 0.5em 0;
   position: relative;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   z-index: 3;
-  width: 100%;
 
   &:before {
     content: '';

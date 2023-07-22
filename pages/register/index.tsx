@@ -33,7 +33,7 @@ const Register: NextPage = () => {
             </Link>
           </header>
           <div className={(pathname === '/register' && styles.animate) || ''}>
-            <input type="text" id="email" placeholder="Username or email" />
+            <input type="text" id="username" placeholder="Username" />
             <input type="password" id="password" placeholder="Password" />
             <input
               type="password"
