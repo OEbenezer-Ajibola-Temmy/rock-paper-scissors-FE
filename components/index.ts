@@ -11,3 +11,5 @@ export { default as CopyLinkButton } from './General/CopyLink';
 export { default as Button } from './General/Button';
 export { default as WebCam } from './UI/WebCam';
 export { default as BigLeaderboard } from './UI/BigLeaderboard';
+export { default as User } from './UI/Gameplay/User';
+export { default as Status } from './UI/Gameplay/Status';

@@ -4,11 +4,12 @@ interface ButtonProps {
   text: string;
   type: 'button' | 'submit' | 'reset';
   onClick?: () => void;
+  className?: any;
 }
 
-const Button = ({ text, type, onClick }: ButtonProps) => {
+const Button = ({ text, type, onClick, className }: ButtonProps) => {
   return (
-    <Register type={type} onClick={onClick}>
+    <Register className={className} type={type} onClick={onClick}>
       {text}
     </Register>
   );
@@ -24,12 +25,12 @@ const Register = styled.button`
   letter-spacing: 0.04em;
   color: #ffffff;
   border: 1px solid #000000;
-  text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.15);
+  text-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.15);
   text-transform: uppercase;
   background: #67eb00;
   border-radius: 26px;
-  height: 61px;
   display: flex;
+  height: 61px;
   align-items: center;
   justify-content: center;
   margin: 0.5em auto;

@@ -1,14 +1,14 @@
 import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
-import { Sidebar } from '../components';
+import { Sidebar, Status, User } from '../components';
 import { leaderboardAtom } from '../recoil';
-import User from '../components/UI/Gameplay/User';
 
 const Gameplay = () => {
   const [openLeaderboard, setOpenLeaderboard] = useRecoilState(leaderboardAtom);
   return (
     <>
       <Sidebar />
+      <Status />
       <Wrapper>
         <Inner>
           <Header>
